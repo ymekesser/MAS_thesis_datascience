@@ -1,0 +1,271 @@
+2023-06-24T09:44:12.204Z [06/24/23 09:44:12] INFO     Saving data to 'model'          data_catalog.py:384
+2023-06-24T09:44:12.204Z                              (PickleDataSet)...                                 
+2023-06-24T09:40:28.788Z [06/24/23 09:40:28] INFO     Kedro project kedro_docker           session.py:359
+2023-06-24T09:40:29.731Z [06/24/23 09:40:29] WARNING  /usr/local/lib/python3.8/importlib/ warnings.py:109
+2023-06-24T09:40:29.731Z                              __init__.py:127:                                   
+2023-06-24T09:40:29.731Z                              DeprecationWarning:                                
+2023-06-24T09:40:29.731Z                              `kedro.extras.datasets` is                         
+2023-06-24T09:40:29.731Z                              deprecated and will be removed in                  
+2023-06-24T09:40:29.731Z                              Kedro 0.19, install                                
+2023-06-24T09:40:29.731Z                              `kedro-datasets` instead by running                
+2023-06-24T09:40:29.731Z                              `pip install kedro-datasets`.                      
+2023-06-24T09:40:29.731Z                                return                                           
+2023-06-24T09:40:29.731Z                              _bootstrap._gcd_import(name[level:]                
+2023-06-24T09:40:29.731Z                              , package, level)                                  
+2023-06-24T09:40:29.731Z                                                                                 
+2023-06-24T09:40:29.863Z                     INFO     Loading data from               data_catalog.py:345
+2023-06-24T09:40:29.863Z                              'source_hdb_address_geodata'                       
+2023-06-24T09:40:29.863Z                              (CSVDataSet)...                                    
+2023-06-24T09:40:30.186Z [06/24/23 09:40:30] INFO     Running node:                           node.py:331
+2023-06-24T09:40:30.186Z                              extract_hdb_address_geodata_node:                  
+2023-06-24T09:40:30.186Z                              extract_hdb_address_geodata([source_hdb            
+2023-06-24T09:40:30.186Z                              _address_geodata]) ->                              
+2023-06-24T09:40:30.186Z                              [staging_hdb_address_geodata]                      
+2023-06-24T09:40:30.224Z                     INFO     Saving data to                  data_catalog.py:384
+2023-06-24T09:40:30.224Z                              'staging_hdb_address_geodata'                      
+2023-06-24T09:40:30.224Z                              (CSVDataSet)...                                    
+2023-06-24T09:40:30.438Z                     INFO     Completed 1 out of 17 tasks sequential_runner.py:85
+2023-06-24T09:40:30.440Z                     INFO     Loading data from               data_catalog.py:345
+2023-06-24T09:40:30.440Z                              'source_hdb_resale_prices'                         
+2023-06-24T09:40:30.440Z                              (CSVDataSet)...                                    
+2023-06-24T09:40:31.919Z [06/24/23 09:40:31] WARNING  /usr/local/lib/python3.8/site-packa warnings.py:109
+2023-06-24T09:40:31.919Z                              ges/kedro/extras/datasets/pandas/cs                
+2023-06-24T09:40:31.919Z                              v_dataset.py:164: DtypeWarning:                    
+2023-06-24T09:40:31.919Z                              Columns (9) have mixed types.                      
+2023-06-24T09:40:31.919Z                              Specify dtype option on import or                  
+2023-06-24T09:40:31.919Z                              set low_memory=False.                              
+2023-06-24T09:40:31.919Z                                return pd.read_csv(                              
+2023-06-24T09:40:31.919Z                                                                                 
+2023-06-24T09:40:32.103Z [06/24/23 09:40:32] INFO     Running node:                           node.py:331
+2023-06-24T09:40:32.103Z                              extract_hdb_resale_prices_node:                    
+2023-06-24T09:40:32.103Z                              extract_hdb_resale_prices([source_hdb_r            
+2023-06-24T09:40:32.103Z                              esale_prices]) ->                                  
+2023-06-24T09:40:32.103Z                              [staging_hdb_resale_prices]                        
+2023-06-24T09:40:32.148Z                     INFO     Saving data to                  data_catalog.py:384
+2023-06-24T09:40:32.148Z                              'staging_hdb_resale_prices'                        
+2023-06-24T09:40:32.148Z                              (CSVDataSet)...                                    
+2023-06-24T09:41:13.100Z [06/24/23 09:41:13] INFO     Completed 15 out of 17      sequential_runner.py:85
+2023-06-24T09:41:13.101Z                              tasks                                              
+2023-06-24T09:41:13.103Z                     INFO     Loading data from               data_catalog.py:345
+2023-06-24T09:41:13.103Z                              'transformed_analytics_feature_                    
+2023-06-24T09:41:13.103Z                              set' (CSVDataSet)...                               
+2023-06-24T09:41:15.423Z [06/24/23 09:41:15] WARNING  /usr/local/lib/python3.8/site-packa warnings.py:109
+2023-06-24T09:41:15.423Z                              ges/kedro/extras/datasets/pandas/cs                
+2023-06-24T09:41:15.423Z                              v_dataset.py:164: DtypeWarning:                    
+2023-06-24T09:41:15.423Z                              Columns (12) have mixed types.                     
+2023-06-24T09:41:15.423Z                              Specify dtype option on import or                  
+2023-06-24T09:41:15.423Z                              set low_memory=False.                              
+2023-06-24T09:41:15.423Z                                return pd.read_csv(                              
+2023-06-24T09:41:15.423Z                                                                                 
+2023-06-24T09:41:15.652Z                     INFO     Running node: split_data_node:          node.py:331
+2023-06-24T09:41:15.652Z                              split_data([transformed_analytics_featu            
+2023-06-24T09:41:15.652Z                              re_set]) ->                                        
+2023-06-24T09:41:15.652Z                              [X_train,X_test,y_train,y_test]                    
+2023-06-24T09:41:15.761Z                     INFO     Saving data to 'X_train'        data_catalog.py:384
+2023-06-24T09:41:15.761Z                              (MemoryDataSet)...                                 
+2023-06-24T09:41:15.768Z                     INFO     Saving data to 'X_test'         data_catalog.py:384
+2023-06-24T09:41:15.768Z                              (MemoryDataSet)...                                 
+2023-06-24T09:41:15.772Z                     INFO     Saving data to 'y_train'        data_catalog.py:384
+2023-06-24T09:41:15.772Z                              (MemoryDataSet)...                                 
+2023-06-24T09:41:15.775Z                     INFO     Saving data to 'y_test'         data_catalog.py:384
+2023-06-24T09:41:15.775Z                              (MemoryDataSet)...                                 
+2023-06-24T09:41:15.795Z                     INFO     Completed 16 out of 17      sequential_runner.py:85
+2023-06-24T09:41:15.795Z                              tasks                                              
+2023-06-24T09:41:15.796Z                     INFO     Loading data from 'X_train'     data_catalog.py:345
+2023-06-24T09:41:15.796Z                              (MemoryDataSet)...                                 
+2023-06-24T09:41:15.803Z                     INFO     Loading data from 'y_train'     data_catalog.py:345
+2023-06-24T09:41:15.803Z                              (MemoryDataSet)...                                 
+2023-06-24T09:41:15.806Z                     INFO     Running node: train_model_node:         node.py:331
+2023-06-24T09:41:15.806Z                              train_model([X_train,y_train]) ->                  
+2023-06-24T09:41:15.806Z                              [model]                                            
+2023-06-24T09:40:36.740Z [06/24/23 09:40:36] INFO     Completed 2 out of 17 tasks sequential_runner.py:85
+2023-06-24T09:40:36.742Z                     INFO     Loading data from               data_catalog.py:345
+2023-06-24T09:40:36.742Z                              'source_mall_geodata'                              
+2023-06-24T09:40:36.742Z                              (APIDataSet)...                                    
+2023-06-24T09:40:48.657Z [06/24/23 09:40:48] WARNING  /usr/local/lib/python3.8/site-packa warnings.py:109
+2023-06-24T09:40:48.657Z                              ges/kedro/extras/datasets/pandas/cs                
+2023-06-24T09:40:48.657Z                              v_dataset.py:164: DtypeWarning:                    
+2023-06-24T09:40:48.657Z                              Columns (9) have mixed types.                      
+2023-06-24T09:40:48.657Z                              Specify dtype option on import or                  
+2023-06-24T09:40:48.657Z                              set low_memory=False.                              
+2023-06-24T09:40:48.657Z                                return pd.read_csv(                              
+2023-06-24T09:40:48.657Z                                                                                 
+2023-06-24T09:40:48.839Z                     INFO     Running node:                           node.py:331
+2023-06-24T09:40:48.839Z                              preprocess_hdb_resale_prices:                      
+2023-06-24T09:40:48.839Z                              preprocess_hdb_resale_prices([storage_h            
+2023-06-24T09:40:48.839Z                              db_resale_prices]) ->                              
+2023-06-24T09:40:48.839Z                              [preprocessed_hdb_resale_prices]                   
+2023-06-24T09:45:19.528Z [06/24/23 09:45:19] INFO     Completed 17 out of 17      sequential_runner.py:85
+2023-06-24T09:45:19.528Z                              tasks                                              
+2023-06-24T09:45:19.530Z                     INFO     Pipeline execution completed           runner.py:94
+2023-06-24T09:45:19.530Z                              successfully.                                      
+2023-06-24T09:45:19.531Z                     INFO     Loading data from 'X_test'      data_catalog.py:345
+2023-06-24T09:45:19.531Z                              (MemoryDataSet)...                                 
+2023-06-24T09:45:19.534Z                     INFO     Loading data from 'y_test'      data_catalog.py:345
+2023-06-24T09:45:19.534Z                              (MemoryDataSet)...                                 
+2023-06-24T09:40:38.363Z [06/24/23 09:40:38] INFO     Running node:                           node.py:331
+2023-06-24T09:40:38.363Z                              extract_mall_geodata_node:                         
+2023-06-24T09:40:38.363Z                              extract_mall_geodata([source_mall_geoda            
+2023-06-24T09:40:38.363Z                              ta]) -> [staging_mall_geodata]                     
+2023-06-24T09:40:38.373Z                     INFO     Saving data to                  data_catalog.py:384
+2023-06-24T09:40:38.373Z                              'staging_mall_geodata'                             
+2023-06-24T09:40:38.373Z                              (JSONDataSet)...                                   
+2023-06-24T09:40:38.486Z                     INFO     Completed 3 out of 17 tasks sequential_runner.py:85
+2023-06-24T09:40:38.488Z                     INFO     Loading data from               data_catalog.py:345
+2023-06-24T09:40:38.488Z                              'source_mrt_geodata'                               
+2023-06-24T09:40:38.488Z                              (APIDataSet)...                                    
+2023-06-24T09:40:39.733Z [06/24/23 09:40:39] INFO     Running node: extract_mrt_geodata_node: node.py:331
+2023-06-24T09:40:39.733Z                              extract_mrt_geodata([source_mrt_geodata            
+2023-06-24T09:40:39.733Z                              ]) -> [staging_mrt_geodata]                        
+2023-06-24T09:40:39.740Z                     INFO     Saving data to                  data_catalog.py:384
+2023-06-24T09:40:39.740Z                              'staging_mrt_geodata'                              
+2023-06-24T09:40:39.740Z                              (JSONDataSet)...                                   
+2023-06-24T09:40:39.891Z                     INFO     Completed 4 out of 17 tasks sequential_runner.py:85
+2023-06-24T09:40:39.893Z                     INFO     Loading data from               data_catalog.py:345
+2023-06-24T09:40:39.893Z                              'source_mrt_stations'                              
+2023-06-24T09:40:39.893Z                              (ExcelDataSet)...                                  
+2023-06-24T09:40:40.203Z [06/24/23 09:40:40] INFO     Running node:                           node.py:331
+2023-06-24T09:40:40.203Z                              extract_mrt_stations_node:                         
+2023-06-24T09:40:40.203Z                              extract_mrt_stations([source_mrt_statio            
+2023-06-24T09:40:40.203Z                              ns]) -> [staging_mrt_stations]                     
+2023-06-24T09:40:40.227Z                     INFO     Saving data to                  data_catalog.py:384
+2023-06-24T09:40:40.227Z                              'staging_mrt_stations'                             
+2023-06-24T09:40:40.227Z                              (ExcelDataSet)...                                  
+2023-06-24T09:40:40.336Z                     INFO     Completed 5 out of 17 tasks sequential_runner.py:85
+2023-06-24T09:40:40.337Z                     INFO     Loading data from               data_catalog.py:345
+2023-06-24T09:40:40.337Z                              'staging_hdb_address_geodata'                      
+2023-06-24T09:40:40.337Z                              (CSVDataSet)...                                    
+2023-06-24T09:40:40.414Z                     INFO     Running node:                           node.py:331
+2023-06-24T09:40:40.414Z                              load_hdb_address_geodata_node:                     
+2023-06-24T09:40:40.414Z                              load_hdb_address_geodata([staging_hdb_a            
+2023-06-24T09:40:40.414Z                              ddress_geodata]) ->                                
+2023-06-24T09:40:40.414Z                              [storage_hdb_address_geodata]                      
+2023-06-24T09:40:40.451Z                     INFO     Saving data to                  data_catalog.py:384
+2023-06-24T09:40:40.451Z                              'storage_hdb_address_geodata'                      
+2023-06-24T09:40:40.451Z                              (CSVDataSet)...                                    
+2023-06-24T09:40:40.613Z                     INFO     Completed 6 out of 17 tasks sequential_runner.py:85
+2023-06-24T09:40:40.615Z                     INFO     Loading data from               data_catalog.py:345
+2023-06-24T09:40:40.615Z                              'staging_hdb_resale_prices'                        
+2023-06-24T09:40:40.615Z                              (CSVDataSet)...                                    
+2023-06-24T09:40:41.822Z [06/24/23 09:40:41] WARNING  /usr/local/lib/python3.8/site-packa warnings.py:109
+2023-06-24T09:40:41.822Z                              ges/kedro/extras/datasets/pandas/cs                
+2023-06-24T09:40:41.822Z                              v_dataset.py:164: DtypeWarning:                    
+2023-06-24T09:40:41.822Z                              Columns (9) have mixed types.                      
+2023-06-24T09:40:41.822Z                              Specify dtype option on import or                  
+2023-06-24T09:40:41.822Z                              set low_memory=False.                              
+2023-06-24T09:40:41.822Z                                return pd.read_csv(                              
+2023-06-24T09:40:41.822Z                                                                                 
+2023-06-24T09:40:42.000Z                     INFO     Running node:                           node.py:331
+2023-06-24T09:40:42.000Z                              load_hdb_resale_prices_node:                       
+2023-06-24T09:40:42.000Z                              load_hdb_resale_prices([staging_hdb_res            
+2023-06-24T09:40:42.000Z                              ale_prices]) ->                                    
+2023-06-24T09:40:42.000Z                              [storage_hdb_resale_prices]                        
+2023-06-24T09:40:42.045Z [06/24/23 09:40:42] INFO     Saving data to                  data_catalog.py:384
+2023-06-24T09:40:42.045Z                              'storage_hdb_resale_prices'                        
+2023-06-24T09:40:42.045Z                              (CSVDataSet)...                                    
+2023-06-24T09:41:01.300Z [06/24/23 09:41:01] INFO     Saving data to                  data_catalog.py:384
+2023-06-24T09:41:01.300Z                              'preprocessed_hdb_resale_prices                    
+2023-06-24T09:41:01.300Z                              ' (MemoryDataSet)...                               
+2023-06-24T09:41:01.346Z                     INFO     Completed 12 out of 17      sequential_runner.py:85
+2023-06-24T09:41:01.346Z                              tasks                                              
+2023-06-24T09:41:01.348Z                     INFO     Loading data from               data_catalog.py:345
+2023-06-24T09:41:01.348Z                              'storage_mall_geodata'                             
+2023-06-24T09:41:01.348Z                              (CSVDataSet)...                                    
+2023-06-24T09:41:01.575Z                     INFO     Running node: preprocess_malls_geodata: node.py:331
+2023-06-24T09:41:01.575Z                              preprocess_malls_with_geodata([storage_            
+2023-06-24T09:41:01.575Z                              mall_geodata]) ->                                  
+2023-06-24T09:41:01.575Z                              [preprocessed_malls_geodata]                       
+2023-06-24T09:41:01.672Z                     INFO     Saving data to                  data_catalog.py:384
+2023-06-24T09:41:01.672Z                              'preprocessed_malls_geodata'                       
+2023-06-24T09:41:01.672Z                              (MemoryDataSet)...                                 
+2023-06-24T09:41:01.679Z                     INFO     Completed 13 out of 17      sequential_runner.py:85
+2023-06-24T09:41:01.679Z                              tasks                                              
+2023-06-24T09:41:01.681Z                     INFO     Loading data from               data_catalog.py:345
+2023-06-24T09:41:01.681Z                              'storage_mrt_stations'                             
+2023-06-24T09:41:01.681Z                              (CSVDataSet)...                                    
+2023-06-24T09:41:01.723Z                     INFO     Loading data from               data_catalog.py:345
+2023-06-24T09:41:01.723Z                              'storage_mrt_geodata'                              
+2023-06-24T09:41:01.723Z                              (CSVDataSet)...                                    
+2023-06-24T09:41:01.858Z                     INFO     Running node:                           node.py:331
+2023-06-24T09:41:01.858Z                              preprocess_mrt_stations_with_geodata:              
+2023-06-24T09:41:01.858Z                              preprocess_mrt_stations_with_geodata([s            
+2023-06-24T09:41:01.858Z                              torage_mrt_stations,storage_mrt_geodata            
+2023-06-24T09:41:01.858Z                              ]) ->                                              
+2023-06-24T09:41:01.858Z                              [preprocessed_mrt_stations_geodata]                
+2023-06-24T09:41:01.941Z                     INFO     Saving data to                  data_catalog.py:384
+2023-06-24T09:41:01.941Z                              'preprocessed_mrt_stations_geod                    
+2023-06-24T09:41:01.941Z                              ata' (MemoryDataSet)...                            
+2023-06-24T09:41:01.952Z                     INFO     Completed 14 out of 17      sequential_runner.py:85
+2023-06-24T09:41:01.952Z                              tasks                                              
+2023-06-24T09:41:01.954Z                     INFO     Loading data from               data_catalog.py:345
+2023-06-24T09:41:01.954Z                              'preprocessed_hdb_resale_prices                    
+2023-06-24T09:41:01.954Z                              ' (MemoryDataSet)...                               
+2023-06-24T09:41:01.985Z                     INFO     Loading data from               data_catalog.py:345
+2023-06-24T09:41:01.985Z                              'preprocessed_hdb_address_geoda                    
+2023-06-24T09:41:01.985Z                              ta' (MemoryDataSet)...                             
+2023-06-24T09:41:01.999Z                     INFO     Loading data from               data_catalog.py:345
+2023-06-24T09:41:01.999Z                              'preprocessed_mrt_stations_geod                    
+2023-06-24T09:41:01.999Z                              ata' (MemoryDataSet)...                            
+2023-06-24T09:41:02.010Z [06/24/23 09:41:02] INFO     Loading data from               data_catalog.py:345
+2023-06-24T09:41:02.010Z                              'preprocessed_malls_geodata'                       
+2023-06-24T09:41:02.010Z                              (MemoryDataSet)...                                 
+2023-06-24T09:41:02.057Z                     INFO     Running node: preprocess_feature_set:   node.py:331
+2023-06-24T09:41:02.057Z                              preprocess_feature_set([preprocessed_hd            
+2023-06-24T09:41:02.057Z                              b_resale_prices,preprocessed_hdb_addres            
+2023-06-24T09:41:02.057Z                              s_geodata,preprocessed_mrt_stations_geo            
+2023-06-24T09:41:02.057Z                              data,preprocessed_malls_geodata]) ->               
+2023-06-24T09:41:02.057Z                              [transformed_analytics_feature_set]                
+2023-06-24T09:41:02.284Z                     INFO     Number of rows with missing  node_feature_set.py:23
+2023-06-24T09:41:02.284Z                              address location: 72040 out                        
+2023-06-24T09:41:02.284Z                              of 611573                                          
+2023-06-24T09:41:03.957Z [06/24/23 09:41:03] INFO     Saving data to                  data_catalog.py:384
+2023-06-24T09:41:03.957Z                              'transformed_analytics_feature_                    
+2023-06-24T09:41:03.957Z                              set' (CSVDataSet)...                               
+2023-06-24T09:40:46.441Z [06/24/23 09:40:46] INFO     Completed 7 out of 17 tasks sequential_runner.py:85
+2023-06-24T09:40:46.443Z                     INFO     Loading data from               data_catalog.py:345
+2023-06-24T09:40:46.443Z                              'staging_mall_geodata'                             
+2023-06-24T09:40:46.443Z                              (JSONDataSet)...                                   
+2023-06-24T09:40:46.485Z                     INFO     Running node: load_mall_geodata_node:   node.py:331
+2023-06-24T09:40:46.485Z                              load_mall_geodata([staging_mall_geodata            
+2023-06-24T09:40:46.485Z                              ]) -> [storage_mall_geodata]                       
+2023-06-24T09:40:46.661Z                     INFO     Saving data to                  data_catalog.py:384
+2023-06-24T09:40:46.661Z                              'storage_mall_geodata'                             
+2023-06-24T09:40:46.661Z                              (CSVDataSet)...                                    
+2023-06-24T09:40:46.779Z                     INFO     Completed 8 out of 17 tasks sequential_runner.py:85
+2023-06-24T09:40:46.781Z                     INFO     Loading data from               data_catalog.py:345
+2023-06-24T09:40:46.781Z                              'staging_mrt_geodata'                              
+2023-06-24T09:40:46.781Z                              (JSONDataSet)...                                   
+2023-06-24T09:40:46.846Z                     INFO     Running node: load_mrt_geodata_node:    node.py:331
+2023-06-24T09:40:46.846Z                              load_mrt_geodata([staging_mrt_geodata])            
+2023-06-24T09:40:46.846Z                              -> [storage_mrt_geodata]                           
+2023-06-24T09:40:46.950Z                     INFO     Saving data to                  data_catalog.py:384
+2023-06-24T09:40:46.950Z                              'storage_mrt_geodata'                              
+2023-06-24T09:40:46.950Z                              (CSVDataSet)...                                    
+2023-06-24T09:40:47.096Z [06/24/23 09:40:47] INFO     Completed 9 out of 17 tasks sequential_runner.py:85
+2023-06-24T09:40:47.097Z                     INFO     Loading data from               data_catalog.py:345
+2023-06-24T09:40:47.097Z                              'staging_mrt_stations'                             
+2023-06-24T09:40:47.097Z                              (ExcelDataSet)...                                  
+2023-06-24T09:40:47.264Z                     INFO     Running node: load_mrt_stations_node:   node.py:331
+2023-06-24T09:40:47.264Z                              load_mrt_stations([staging_mrt_stations            
+2023-06-24T09:40:47.264Z                              ]) -> [storage_mrt_stations]                       
+2023-06-24T09:40:47.288Z                     INFO     Saving data to                  data_catalog.py:384
+2023-06-24T09:40:47.288Z                              'storage_mrt_stations'                             
+2023-06-24T09:40:47.288Z                              (CSVDataSet)...                                    
+2023-06-24T09:40:47.340Z                     INFO     Completed 10 out of 17      sequential_runner.py:85
+2023-06-24T09:40:47.340Z                              tasks                                              
+2023-06-24T09:40:47.341Z                     INFO     Loading data from               data_catalog.py:345
+2023-06-24T09:40:47.341Z                              'storage_hdb_address_geodata'                      
+2023-06-24T09:40:47.341Z                              (CSVDataSet)...                                    
+2023-06-24T09:40:47.415Z                     INFO     Running node:                           node.py:331
+2023-06-24T09:40:47.415Z                              preprocess_hdb_adress_geodata:                     
+2023-06-24T09:40:47.415Z                              preprocess_addresses_with_geodata([stor            
+2023-06-24T09:40:47.415Z                              age_hdb_address_geodata]) ->                       
+2023-06-24T09:40:47.415Z                              [preprocessed_hdb_address_geodata]                 
+2023-06-24T09:40:47.457Z                     INFO     Saving data to                  data_catalog.py:384
+2023-06-24T09:40:47.457Z                              'preprocessed_hdb_address_geoda                    
+2023-06-24T09:40:47.457Z                              ta' (MemoryDataSet)...                             
+2023-06-24T09:40:47.471Z                     INFO     Completed 11 out of 17      sequential_runner.py:85
+2023-06-24T09:40:47.471Z                              tasks                                              
+2023-06-24T09:40:47.473Z                     INFO     Loading data from               data_catalog.py:345
+2023-06-24T09:40:47.473Z                              'storage_hdb_resale_prices'                        
+2023-06-24T09:40:47.473Z                              (CSVDataSet)...                                    

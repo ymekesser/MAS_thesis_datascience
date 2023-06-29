@@ -1,0 +1,66 @@
+2023-06-24T08:04:49.936Z INFO 2023-06-24 08:04:49,936 - Storing feature_set.csv to transformed (analytics)
+2023-06-24T08:04:49.936Z INFO 2023-06-24 08:04:49,936 - Write dataframe to dp-plain-python/transformed_analytics/feature_set.csv
+2023-06-24T08:04:48.735Z INFO 2023-06-24 08:04:48,735 - Number of rows with missing address location: 72040 out of 611573
+2023-06-24T08:04:35.511Z /code/dp_plain_python/environment/file_storage.py:127: DtypeWarning: Columns (9) have mixed types. Specify dtype option on import or set low_memory=False.
+2023-06-24T08:04:35.511Z   df = pd.read_csv(io.BytesIO(obj["Body"].read()))
+2023-06-24T08:04:35.652Z INFO 2023-06-24 08:04:35,652 - Write dataframe to dp-plain-python/storage/resale_flat_prices.csv
+2023-06-24T08:04:38.625Z INFO 2023-06-24 08:04:38,625 - Loading mrt_stations.xlsx from staging into storage
+2023-06-24T08:04:38.625Z INFO 2023-06-24 08:04:38,625 - Read excel data from dp-plain-python/staging/mrt_stations.xlsx (sheet: Sheet1)
+2023-06-24T08:04:38.921Z INFO 2023-06-24 08:04:38,921 - Write dataframe to dp-plain-python/storage/mrt_stations.csv
+2023-06-24T08:04:38.996Z INFO 2023-06-24 08:04:38,996 - Loading mrt_geodata.json from staging into storage
+2023-06-24T08:04:38.996Z INFO 2023-06-24 08:04:38,996 - Read JSON data from dp-plain-python/staging/mrt_geodata.json
+2023-06-24T08:04:39.026Z INFO 2023-06-24 08:04:39,026 - Write dataframe to dp-plain-python/storage/mrt_geodata.csv
+2023-06-24T08:04:39.090Z INFO 2023-06-24 08:04:39,090 - Loading mall_geodata.json from staging into storage
+2023-06-24T08:04:39.090Z INFO 2023-06-24 08:04:39,090 - Read JSON data from dp-plain-python/staging/mall_geodata.json
+2023-06-24T08:04:39.126Z INFO 2023-06-24 08:04:39,126 - Write dataframe to dp-plain-python/storage/mall_geodata.csv
+2023-06-24T08:04:39.166Z INFO 2023-06-24 08:04:39,166 - Loading address_geolocations.csv from staging into storage
+2023-06-24T08:04:39.166Z INFO 2023-06-24 08:04:39,166 - Read dataframe from dp-plain-python/staging/address_geolocations.csv
+2023-06-24T08:04:39.197Z INFO 2023-06-24 08:04:39,197 - Write dataframe to dp-plain-python/storage/address_geodata.csv
+2023-06-24T08:04:39.348Z INFO 2023-06-24 08:04:39,348 - Starting Transformation Step for analytics
+2023-06-24T08:04:39.348Z INFO 2023-06-24 08:04:39,348 - Read dataframe from dp-plain-python/storage/resale_flat_prices.csv
+2023-06-24T08:04:40.487Z /code/dp_plain_python/environment/file_storage.py:127: DtypeWarning: Columns (9) have mixed types. Specify dtype option on import or set low_memory=False.
+2023-06-24T08:04:40.487Z   df = pd.read_csv(io.BytesIO(obj["Body"].read()))
+2023-06-24T08:04:40.631Z INFO 2023-06-24 08:04:40,631 - Read dataframe from dp-plain-python/storage/mrt_stations.csv
+2023-06-24T08:04:40.649Z INFO 2023-06-24 08:04:40,649 - Read dataframe from dp-plain-python/storage/mrt_geodata.csv
+2023-06-24T08:04:40.674Z INFO 2023-06-24 08:04:40,674 - Read dataframe from dp-plain-python/storage/mall_geodata.csv
+2023-06-24T08:04:40.700Z INFO 2023-06-24 08:04:40,700 - Read dataframe from dp-plain-python/storage/address_geodata.csv
+2023-06-24T08:04:57.005Z INFO 2023-06-24 08:04:57,005 - Starting Analytics Step
+2023-06-24T08:04:57.005Z INFO 2023-06-24 08:04:57,005 - Loading feature_set.csv from transformed_analytics for analytics
+2023-06-24T08:04:57.006Z INFO 2023-06-24 08:04:57,006 - Read dataframe from dp-plain-python/transformed_analytics/feature_set.csv
+2023-06-24T08:04:59.040Z /code/dp_plain_python/environment/file_storage.py:127: DtypeWarning: Columns (12) have mixed types. Specify dtype option on import or set low_memory=False.
+2023-06-24T08:04:59.040Z   df = pd.read_csv(io.BytesIO(obj["Body"].read()))
+2023-06-24T08:04:59.292Z INFO 2023-06-24 08:04:59,292 - Fitting model
+2023-06-24T08:04:25.642Z Skipping virtualenv creation, as specified in config file.
+2023-06-24T08:04:28.823Z INFO 2023-06-24 08:04:28,823 - Data Pipeline started.
+2023-06-24T08:04:28.823Z INFO 2023-06-24 08:04:28,823 - Starting Extraction Step.
+2023-06-24T08:04:28.823Z INFO 2023-06-24 08:04:28,823 - Extracting hdb resale flat prices data
+2023-06-24T08:04:28.824Z Copying file from source_data/resale-flat-prices-big-set.csv to dp-plain-python/staging/resale-flat-prices-big-set.csv
+2023-06-24T08:04:30.133Z INFO 2023-06-24 08:04:30,133 - Extracting MRT station data
+2023-06-24T08:04:30.134Z Copying file from source_data/mrt_stations.xlsx to dp-plain-python/staging/mrt_stations.xlsx
+2023-06-24T08:04:30.271Z INFO 2023-06-24 08:04:30,270 - Extracting MRT geodata
+2023-06-24T08:04:30.271Z INFO 2023-06-24 08:04:30,271 - Querying overpass (https://overpass-api.de/api/interpreter). Query: 
+2023-06-24T08:04:30.271Z [out:json];
+2023-06-24T08:04:30.271Z area["ISO3166-1"="SG"][admin_level=2];
+2023-06-24T08:04:30.271Z node(area)["subway"="yes"];
+2023-06-24T08:04:30.271Z out;
+2023-06-24T08:04:32.246Z INFO 2023-06-24 08:04:32,245 - Overpass query successful
+2023-06-24T08:04:32.249Z INFO 2023-06-24 08:04:32,249 - Writing JSON data to dp-plain-python/staging/mrt_geodata.json
+2023-06-24T08:04:32.344Z INFO 2023-06-24 08:04:32,344 - Extracting Shopping Mall geodata
+2023-06-24T08:04:32.344Z INFO 2023-06-24 08:04:32,344 - Querying overpass (https://overpass-api.de/api/interpreter). Query: 
+2023-06-24T08:04:32.344Z [out:json];
+2023-06-24T08:04:32.344Z area["ISO3166-1"="SG"][admin_level=2]->.sg;
+2023-06-24T08:04:32.344Z (
+2023-06-24T08:04:32.344Z   node["shop"="mall"](area.sg);
+2023-06-24T08:04:32.344Z   way["shop"="mall"](area.sg);
+2023-06-24T08:04:32.344Z   relation["shop"="mall"](area.sg);
+2023-06-24T08:04:32.344Z );
+2023-06-24T08:04:32.344Z out center;
+2023-06-24T08:04:33.972Z INFO 2023-06-24 08:04:33,972 - Overpass query successful
+2023-06-24T08:04:33.976Z INFO 2023-06-24 08:04:33,976 - Writing JSON data to dp-plain-python/staging/mall_geodata.json
+2023-06-24T08:04:34.060Z INFO 2023-06-24 08:04:34,060 - Extracting address geolocation data
+2023-06-24T08:04:34.060Z Copying file from source_data/address_geolocations.csv to dp-plain-python/staging/address_geolocations.csv
+2023-06-24T08:04:34.218Z INFO 2023-06-24 08:04:34,218 - Starting Loading Step.
+2023-06-24T08:04:34.218Z INFO 2023-06-24 08:04:34,218 - Loading resale-flat-prices-big-set.csv from staging into storage
+2023-06-24T08:04:34.218Z INFO 2023-06-24 08:04:34,218 - Read dataframe from dp-plain-python/staging/resale-flat-prices-big-set.csv
+2023-06-24T08:07:43.783Z INFO 2023-06-24 08:07:43,783 - Writing pickled object to dp-plain-python/analytics/model
+2023-06-24T08:08:33.111Z INFO 2023-06-24 08:08:33,111 - Data Pipeline completed.

@@ -1,0 +1,62 @@
+2023-06-21T11:18:46.722Z INFO 2023-06-21 11:18:46,722 - Overpass query successful
+2023-06-21T11:18:46.725Z INFO 2023-06-21 11:18:46,725 - Writing JSON data to dp-plain-python/staging/mrt_geodata.json
+2023-06-21T11:18:46.778Z INFO 2023-06-21 11:18:46,778 - Extracting Shopping Mall geodata
+2023-06-21T11:18:46.778Z INFO 2023-06-21 11:18:46,778 - Querying overpass (https://overpass-api.de/api/interpreter). Query: 
+2023-06-21T11:18:46.778Z [out:json];
+2023-06-21T11:18:46.778Z area["ISO3166-1"="SG"][admin_level=2]->.sg;
+2023-06-21T11:18:46.778Z (
+2023-06-21T11:18:46.778Z   node["shop"="mall"](area.sg);
+2023-06-21T11:18:46.778Z   way["shop"="mall"](area.sg);
+2023-06-21T11:18:46.778Z   relation["shop"="mall"](area.sg);
+2023-06-21T11:18:46.778Z );
+2023-06-21T11:18:46.778Z out center;
+2023-06-21T11:18:48.416Z INFO 2023-06-21 11:18:48,415 - Overpass query successful
+2023-06-21T11:18:48.419Z INFO 2023-06-21 11:18:48,419 - Writing JSON data to dp-plain-python/staging/mall_geodata.json
+2023-06-21T11:18:48.514Z INFO 2023-06-21 11:18:48,514 - Extracting address geolocation data
+2023-06-21T11:18:48.514Z Copying file from source_data/address_geolocations.csv to dp-plain-python/staging/address_geolocations.csv
+2023-06-21T11:18:48.677Z INFO 2023-06-21 11:18:48,676 - Starting Loading Step.
+2023-06-21T11:18:48.677Z INFO 2023-06-21 11:18:48,676 - Loading resale-flat-prices-based-on-registration-date-from-jan-2017-onwards.csv from staging into storage
+2023-06-21T11:18:48.677Z INFO 2023-06-21 11:18:48,677 - Read dataframe from dp-plain-python/staging/resale-flat-prices-based-on-registration-date-from-jan-2017-onwards.csv
+2023-06-21T11:18:49.020Z INFO 2023-06-21 11:18:49,020 - Write dataframe to dp-plain-python/storage/resale_flat_prices.csv
+2023-06-21T11:18:49.780Z INFO 2023-06-21 11:18:49,780 - Loading mrt_stations.xlsx from staging into storage
+2023-06-21T11:18:49.780Z INFO 2023-06-21 11:18:49,780 - Read excel data from dp-plain-python/staging/mrt_stations.xlsx (sheet: Sheet1)
+2023-06-21T11:18:50.030Z INFO 2023-06-21 11:18:50,030 - Write dataframe to dp-plain-python/storage/mrt_stations.csv
+2023-06-21T11:18:50.057Z INFO 2023-06-21 11:18:50,057 - Loading mrt_geodata.json from staging into storage
+2023-06-21T11:18:50.057Z INFO 2023-06-21 11:18:50,057 - Read JSON data from dp-plain-python/staging/mrt_geodata.json
+2023-06-21T11:18:50.086Z INFO 2023-06-21 11:18:50,086 - Write dataframe to dp-plain-python/storage/mrt_geodata.csv
+2023-06-21T11:18:50.152Z INFO 2023-06-21 11:18:50,152 - Loading mall_geodata.json from staging into storage
+2023-06-21T11:18:50.152Z INFO 2023-06-21 11:18:50,152 - Read JSON data from dp-plain-python/staging/mall_geodata.json
+2023-06-21T11:18:50.187Z INFO 2023-06-21 11:18:50,187 - Write dataframe to dp-plain-python/storage/mall_geodata.csv
+2023-06-21T11:18:50.222Z INFO 2023-06-21 11:18:50,222 - Loading address_geolocations.csv from staging into storage
+2023-06-21T11:18:50.222Z INFO 2023-06-21 11:18:50,222 - Read dataframe from dp-plain-python/staging/address_geolocations.csv
+2023-06-21T11:18:50.251Z INFO 2023-06-21 11:18:50,251 - Write dataframe to dp-plain-python/storage/address_geodata.csv
+2023-06-21T11:18:50.451Z INFO 2023-06-21 11:18:50,451 - Starting Transformation Step for analytics
+2023-06-21T11:18:50.451Z INFO 2023-06-21 11:18:50,451 - Read dataframe from dp-plain-python/storage/resale_flat_prices.csv
+2023-06-21T11:18:50.779Z INFO 2023-06-21 11:18:50,779 - Read dataframe from dp-plain-python/storage/mrt_stations.csv
+2023-06-21T11:18:50.801Z INFO 2023-06-21 11:18:50,801 - Read dataframe from dp-plain-python/storage/mrt_geodata.csv
+2023-06-21T11:18:50.825Z INFO 2023-06-21 11:18:50,825 - Read dataframe from dp-plain-python/storage/mall_geodata.csv
+2023-06-21T11:18:50.851Z INFO 2023-06-21 11:18:50,851 - Read dataframe from dp-plain-python/storage/address_geodata.csv
+2023-06-21T11:18:51.258Z INFO 2023-06-21 11:18:51,258 - Number of rows with missing address location: 15616 out of 152566
+2023-06-21T11:19:35.185Z INFO 2023-06-21 11:19:35,184 - Data Pipeline completed.
+2023-06-21T11:18:51.504Z INFO 2023-06-21 11:18:51,504 - Storing feature_set.csv to transformed (analytics)
+2023-06-21T11:18:51.504Z INFO 2023-06-21 11:18:51,504 - Write dataframe to dp-plain-python/transformed_analytics/feature_set.csv
+2023-06-21T11:18:53.049Z INFO 2023-06-21 11:18:53,049 - Starting Analytics Step
+2023-06-21T11:18:53.050Z INFO 2023-06-21 11:18:53,049 - Loading feature_set.csv from transformed_analytics for analytics
+2023-06-21T11:18:53.050Z INFO 2023-06-21 11:18:53,050 - Read dataframe from dp-plain-python/transformed_analytics/feature_set.csv
+2023-06-21T11:18:53.544Z /code/dp_plain_python/environment/file_storage.py:127: DtypeWarning: Columns (12) have mixed types. Specify dtype option on import or set low_memory=False.
+2023-06-21T11:18:53.544Z   df = pd.read_csv(io.BytesIO(obj["Body"].read()))
+2023-06-21T11:18:53.595Z INFO 2023-06-21 11:18:53,595 - Fitting model
+2023-06-21T11:19:27.654Z INFO 2023-06-21 11:19:27,654 - Writing pickled object to dp-plain-python/analytics/model
+2023-06-21T11:18:42.216Z Skipping virtualenv creation, as specified in config file.
+2023-06-21T11:18:44.988Z INFO 2023-06-21 11:18:44,988 - Data Pipeline started.
+2023-06-21T11:18:44.988Z INFO 2023-06-21 11:18:44,988 - Starting Extraction Step.
+2023-06-21T11:18:44.988Z INFO 2023-06-21 11:18:44,988 - Extracting hdb resale flat prices data
+2023-06-21T11:18:44.988Z Copying file from source_data/resale-flat-prices-based-on-registration-date-from-jan-2017-onwards.csv to dp-plain-python/staging/resale-flat-prices-based-on-registration-date-from-jan-2017-onwards.csv
+2023-06-21T11:18:45.378Z INFO 2023-06-21 11:18:45,377 - Extracting MRT station data
+2023-06-21T11:18:45.378Z Copying file from source_data/mrt_stations.xlsx to dp-plain-python/staging/mrt_stations.xlsx
+2023-06-21T11:18:45.476Z INFO 2023-06-21 11:18:45,476 - Extracting MRT geodata
+2023-06-21T11:18:45.476Z INFO 2023-06-21 11:18:45,476 - Querying overpass (https://overpass-api.de/api/interpreter). Query: 
+2023-06-21T11:18:45.476Z [out:json];
+2023-06-21T11:18:45.476Z area["ISO3166-1"="SG"][admin_level=2];
+2023-06-21T11:18:45.476Z node(area)["subway"="yes"];
+2023-06-21T11:18:45.476Z out;

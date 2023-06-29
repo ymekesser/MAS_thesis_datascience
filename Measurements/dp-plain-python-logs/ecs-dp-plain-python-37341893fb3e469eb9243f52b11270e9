@@ -1,0 +1,62 @@
+2023-06-18T08:18:50.934Z INFO 2023-06-18 08:18:50,934 - Loading mall_geodata.json from staging into storage
+2023-06-18T08:18:50.934Z INFO 2023-06-18 08:18:50,934 - Read JSON data from dp-plain-python/staging/mall_geodata.json
+2023-06-18T08:18:50.966Z INFO 2023-06-18 08:18:50,966 - Write dataframe to dp-plain-python/storage/mall_geodata.csv
+2023-06-18T08:18:51.077Z INFO 2023-06-18 08:18:51,076 - Loading address_geolocations.csv from staging into storage
+2023-06-18T08:18:51.077Z INFO 2023-06-18 08:18:51,077 - Read dataframe from dp-plain-python/staging/address_geolocations.csv
+2023-06-18T08:18:51.111Z INFO 2023-06-18 08:18:51,111 - Write dataframe to dp-plain-python/storage/address_geodata.csv
+2023-06-18T08:18:51.204Z INFO 2023-06-18 08:18:51,204 - Starting Transformation Step for analytics
+2023-06-18T08:18:51.206Z INFO 2023-06-18 08:18:51,204 - Read dataframe from dp-plain-python/storage/resale_flat_prices.csv
+2023-06-18T08:18:51.564Z INFO 2023-06-18 08:18:51,564 - Read dataframe from dp-plain-python/storage/mrt_stations.csv
+2023-06-18T08:18:51.580Z INFO 2023-06-18 08:18:51,580 - Read dataframe from dp-plain-python/storage/mrt_geodata.csv
+2023-06-18T08:18:51.598Z INFO 2023-06-18 08:18:51,598 - Read dataframe from dp-plain-python/storage/mall_geodata.csv
+2023-06-18T08:18:51.624Z INFO 2023-06-18 08:18:51,624 - Read dataframe from dp-plain-python/storage/address_geodata.csv
+2023-06-18T08:18:52.052Z INFO 2023-06-18 08:18:52,052 - Number of rows with missing address location: 15616 out of 152566
+2023-06-18T08:18:52.354Z INFO 2023-06-18 08:18:52,354 - Storing feature_set.csv to transformed (analytics)
+2023-06-18T08:18:52.354Z INFO 2023-06-18 08:18:52,354 - Write dataframe to dp-plain-python/transformed_analytics/feature_set.csv
+2023-06-18T08:18:54.387Z INFO 2023-06-18 08:18:54,387 - Starting Analytics Step
+2023-06-18T08:18:54.387Z INFO 2023-06-18 08:18:54,387 - Loading feature_set.csv from transformed_analytics for analytics
+2023-06-18T08:18:54.390Z INFO 2023-06-18 08:18:54,388 - Read dataframe from dp-plain-python/transformed_analytics/feature_set.csv
+2023-06-18T08:18:54.960Z /code/dp_plain_python/environment/file_storage.py:127: DtypeWarning: Columns (12) have mixed types. Specify dtype option on import or set low_memory=False.
+2023-06-18T08:18:54.960Z   df = pd.read_csv(io.BytesIO(obj["Body"].read()))
+2023-06-18T08:18:55.018Z INFO 2023-06-18 08:18:55,018 - Fitting model
+2023-06-18T08:18:41.908Z Skipping virtualenv creation, as specified in config file.
+2023-06-18T08:18:45.193Z INFO 2023-06-18 08:18:45,193 - Data Pipeline started.
+2023-06-18T08:18:45.193Z INFO 2023-06-18 08:18:45,193 - Starting Extraction Step.
+2023-06-18T08:18:45.194Z INFO 2023-06-18 08:18:45,193 - Extracting hdb resale flat prices data
+2023-06-18T08:18:45.194Z Copying file from source_data/resale-flat-prices-based-on-registration-date-from-jan-2017-onwards.csv to dp-plain-python/staging/resale-flat-prices-based-on-registration-date-from-jan-2017-onwards.csv
+2023-06-18T08:18:45.458Z INFO 2023-06-18 08:18:45,457 - Extracting MRT station data
+2023-06-18T08:18:45.458Z Copying file from source_data/mrt_stations.xlsx to dp-plain-python/staging/mrt_stations.xlsx
+2023-06-18T08:18:45.565Z INFO 2023-06-18 08:18:45,564 - Extracting MRT geodata
+2023-06-18T08:18:45.565Z INFO 2023-06-18 08:18:45,565 - Querying overpass (https://overpass-api.de/api/interpreter). Query: 
+2023-06-18T08:18:45.565Z [out:json];
+2023-06-18T08:18:45.565Z area["ISO3166-1"="SG"][admin_level=2];
+2023-06-18T08:18:45.565Z node(area)["subway"="yes"];
+2023-06-18T08:18:45.565Z out;
+2023-06-18T08:19:36.160Z INFO 2023-06-18 08:19:36,160 - Writing pickled object to dp-plain-python/analytics/model
+2023-06-18T08:19:42.844Z INFO 2023-06-18 08:19:42,844 - Data Pipeline completed.
+2023-06-18T08:18:47.131Z INFO 2023-06-18 08:18:47,131 - Overpass query successful
+2023-06-18T08:18:47.135Z INFO 2023-06-18 08:18:47,135 - Writing JSON data to dp-plain-python/staging/mrt_geodata.json
+2023-06-18T08:18:47.199Z INFO 2023-06-18 08:18:47,199 - Extracting Shopping Mall geodata
+2023-06-18T08:18:47.199Z INFO 2023-06-18 08:18:47,199 - Querying overpass (https://overpass-api.de/api/interpreter). Query: 
+2023-06-18T08:18:47.199Z [out:json];
+2023-06-18T08:18:47.199Z area["ISO3166-1"="SG"][admin_level=2]->.sg;
+2023-06-18T08:18:47.199Z (
+2023-06-18T08:18:47.199Z   node["shop"="mall"](area.sg);
+2023-06-18T08:18:47.199Z   way["shop"="mall"](area.sg);
+2023-06-18T08:18:47.199Z   relation["shop"="mall"](area.sg);
+2023-06-18T08:18:47.199Z );
+2023-06-18T08:18:47.199Z out center;
+2023-06-18T08:18:48.801Z INFO 2023-06-18 08:18:48,801 - Overpass query successful
+2023-06-18T08:18:48.806Z INFO 2023-06-18 08:18:48,805 - Writing JSON data to dp-plain-python/staging/mall_geodata.json
+2023-06-18T08:18:48.890Z INFO 2023-06-18 08:18:48,890 - Extracting address geolocation data
+2023-06-18T08:18:48.890Z Copying file from source_data/address_geolocations.csv to dp-plain-python/staging/address_geolocations.csv
+2023-06-18T08:18:49.047Z INFO 2023-06-18 08:18:49,046 - Starting Loading Step.
+2023-06-18T08:18:49.047Z INFO 2023-06-18 08:18:49,047 - Loading resale-flat-prices-based-on-registration-date-from-jan-2017-onwards.csv from staging into storage
+2023-06-18T08:18:49.047Z INFO 2023-06-18 08:18:49,047 - Read dataframe from dp-plain-python/staging/resale-flat-prices-based-on-registration-date-from-jan-2017-onwards.csv
+2023-06-18T08:18:49.447Z INFO 2023-06-18 08:18:49,447 - Write dataframe to dp-plain-python/storage/resale_flat_prices.csv
+2023-06-18T08:18:50.549Z INFO 2023-06-18 08:18:50,549 - Loading mrt_stations.xlsx from staging into storage
+2023-06-18T08:18:50.549Z INFO 2023-06-18 08:18:50,549 - Read excel data from dp-plain-python/staging/mrt_stations.xlsx (sheet: Sheet1)
+2023-06-18T08:18:50.829Z INFO 2023-06-18 08:18:50,829 - Write dataframe to dp-plain-python/storage/mrt_stations.csv
+2023-06-18T08:18:50.856Z INFO 2023-06-18 08:18:50,856 - Loading mrt_geodata.json from staging into storage
+2023-06-18T08:18:50.856Z INFO 2023-06-18 08:18:50,856 - Read JSON data from dp-plain-python/staging/mrt_geodata.json
+2023-06-18T08:18:50.888Z INFO 2023-06-18 08:18:50,888 - Write dataframe to dp-plain-python/storage/mrt_geodata.csv
